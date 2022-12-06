@@ -1,9 +1,22 @@
 let choices = ["rock", "paper", "scissors"];
 let playerWin = 0;
 let computerWin = 0;
+let winner = "";
 // TODO: loop this 5 times and determine a winner
-//playRound ()
-//console.log(playRound())
+
+function game() {
+    for (roundsPlayed = 0; roundsPlayed < 5; roundsPlayed++) {
+        console.log(playRound());
+        console.log("Player: " + playerWin + " " + "Computer: " + computerWin);
+    }
+    if (playerWin == computerWin) {
+        console.log("It's a tie! Let's play again, oomfie.")
+    } else if (playerWin > computerWin) {
+        console.log("Player wins! I'll get you next time, oomfie.")
+    } else {
+        console.log("Computer wins! Better luck next time, oomfie.")
+    }
+}
 
 //function that will randomly return 'rock' 'paper' or 'scissors'
 function getComputerChoice(choices) {
