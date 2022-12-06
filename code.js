@@ -1,7 +1,7 @@
 let choices = ["rock", "paper", "scissors"];
 let playerWin = 0;
 let computerWin = 0;
-let winner = "";
+game();
 // TODO: loop this 5 times and determine a winner
 
 function game() {
