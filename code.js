@@ -13,7 +13,7 @@ function getComputerChoice(choices) {
 
 function getPlayerChoice() {
     //let playerChoice = prompt("choose rock, paper, or scissors");
-    let playerChoice = choices[0];
+    let playerChoice = choices[2];
     playerChoice = playerChoice.toLowerCase();
     console.log("The player chose: " + playerChoice)
     return playerChoice
@@ -27,6 +27,12 @@ function playGame() {
     let plrSelection = getPlayerChoice();
         if (plrSelection == compSelection) {
             console.log("Draw! Try again.")
-        } else console.log("okay")
+        } else if (compSelection[0] && (plrSelection = "scissors")) {
+            console.log("Rock beats scissors! Computer wins!")
+        } else if (compSelection[1] && (plrSelection = "rock")) {
+            console.log("Paper covers rock! Computer wins!")
+        } else if (compSelection[2] && (plrSelection = "paper")) {
+            console.log("Scissors cuts paper! Computer wins!")
+        } else console.log("You mispelled it dingus.")
         // TODO: see who won the game
 }
