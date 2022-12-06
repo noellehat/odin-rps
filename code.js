@@ -6,14 +6,14 @@ playGame ()
 //function that will randomly return 'rock' 'paper' or 'scissors'
 function getComputerChoice(choices) {
     //let computerSelection = choices[Math.floor(Math.random()*choices.length)];
-    let computerSelection = choices[0];
+    let computerSelection = choices[1];
     console.log("The computer chose: " + computerSelection);
     return computerSelection;
 }
 
 function getPlayerChoice() {
     //let playerChoice = prompt("choose rock, paper, or scissors");
-    let playerChoice = choices[2];
+    let playerChoice = choices[0];
     playerChoice = playerChoice.toLowerCase();
     console.log("The player chose: " + playerChoice)
     return playerChoice
@@ -26,13 +26,19 @@ function playGame() {
 
     let plrSelection = getPlayerChoice();
         if (plrSelection == compSelection) {
-            console.log("Draw! Try again.")
+            console.log("Draw! Try again.");
         } else if (compSelection[0] && (plrSelection = "scissors")) {
-            console.log("Rock beats scissors! Computer wins!")
+            console.log("Rock beats scissors! Computer wins!");
         } else if (compSelection[1] && (plrSelection = "rock")) {
-            console.log("Paper covers rock! Computer wins!")
+            console.log("Paper covers rock! Computer wins!");
         } else if (compSelection[2] && (plrSelection = "paper")) {
-            console.log("Scissors cuts paper! Computer wins!")
-        } else console.log("You mispelled it dingus.")
+            console.log("Scissors cuts paper! Computer wins!");
+        } else if ((plrSelection = "rock") && compSelection[2]) {
+            console.log("Rock beats scissors! Player wins!");
+        } else if ((plrSelection = "paper") && compSelection[0]) {
+            console.log("Paper covers rock! Player wins!");
+        } else if ((plrSelection = "scissors") && compSelection[1]) {
+            console.log("Scissors cuts paper! Player wins!");
+        } else console.log("You mispelled it dingus.");
         // TODO: see who won the game
 }
