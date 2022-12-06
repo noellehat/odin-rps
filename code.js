@@ -1,7 +1,9 @@
 let choices = ["rock", "paper", "scissors"];
+let playerWin = 0;
+let computerWin = 0;
 // TODO: loop this 5 times and determine a winner
-//playGame ()
-console.log(playGame())
+//playRound ()
+//console.log(playRound())
 
 //function that will randomly return 'rock' 'paper' or 'scissors'
 function getComputerChoice(choices) {
@@ -20,33 +22,41 @@ function getPlayerChoice() {
 }
 
 //function that plays a single round of rock paper scissors, takes two parameters
-function playGame() {
+function playRound() {
     console.log("Play da game hit!")
     let compSelection = getComputerChoice(choices);
 
     let plrSelection = getPlayerChoice();
         if (plrSelection == compSelection) {
-            console.log("Draw! Try again.");
+            return "Draw! Try again.";
         } else if (plrSelection == "rock") {
             if (compSelection == "scissors") {
-                return "Rock beats scissors! Player wins!"
+                playerWin++;
+                return "Rock beats scissors! Player wins!";
             } else {
-                return "Paper covers rock! Computer wins!"
+                computerWin++;
+                return "Paper covers rock! Computer wins!";
             }
         } else if (plrSelection == "paper") {
             if (compSelection == "rock") {
-                return "Paper covers rock! Player wins!"
+                playerWin++;
+                return "Paper covers rock! Player wins!";
             } else {
-                return "Scissors beats paper! Computer wins!"
+                computerWin++;
+                return "Scissors beats paper! Computer wins!";
             }
         } else if (plrSelection == "scissors") {
             if (compSelection == "paper") {
-                return "Scissors cuts paper! Player wins!"
+                playerWin++
+                return "Scissors cuts paper! Player wins!";
             } else {
-                return "Rock beats scissors! Computer wins!"
+                computerWin++
+                return "Rock beats scissors! Computer wins!";
             }
         } else {
-            return "You typed something funny, dingus."
-        }
-        // TODO: see who won the game
+            return "You typed something funny, dingus.";
+        }        
 }
+// TODO: see who won the game
+//wins tracker
+//console.log("Player: " + playerWin + " " + "Computer: " + computerWin)
